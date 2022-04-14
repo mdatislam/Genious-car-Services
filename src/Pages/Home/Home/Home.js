@@ -1,17 +1,18 @@
 import React from 'react';
 import Bannar from '../Bannar/Bannar';
-import Services from '../Services/Services'
+import Exparts from '../Exparts/Exparts';
+import Services from '../Services/Services';
+
 
 
 
 const Home = () => {
     return (
-        <div>
-              <Bannar></Bannar>
-         <header>
-             <Services></Services>
-         </header>
-        </div>
+        <>
+        <Bannar></Bannar>
+        <Services></Services>
+        <Exparts></Exparts>
+        </>
     );
 };
 

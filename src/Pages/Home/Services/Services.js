@@ -18,8 +18,8 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className="">
-      <h2 className="text-center text-primary m-2">
+    <div className="mt-3 py-2">
+      <h2 className="text-center text-primary mt-4">
         Total services: {services.length}
       </h2>
       <div className="services-container container">
@@ -27,7 +27,7 @@ const Services = () => {
           <Service key={service.id} service={service}></Service>
         ))}
       </div>
-      <Exparts></Exparts>
+      
     </div>
   );
 };
