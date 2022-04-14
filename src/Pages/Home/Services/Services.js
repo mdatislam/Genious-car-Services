@@ -18,7 +18,7 @@ const Services = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className="mt-3 py-2">
+    <div id="Services" className="mt-3 py-2">
       <h2 className="text-center text-primary mt-4">
         Total services: {services.length}
       </h2>

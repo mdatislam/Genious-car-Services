@@ -19,7 +19,7 @@ const Exparts = () => {
     { id: 6, name: "Moyna", img: Expart6 },
   ];
   return (
-    <div className="container">
+    <div id="Exparts" className="container">
       <h2 className="text-info text-center m-4">Our Exparts</h2>
       <div className="row gx-3">
           
