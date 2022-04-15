@@ -8,6 +8,7 @@ import Footer from '../src/Pages/Shared/Footer/Footer'
 import ServiceDetail from './Pages/ServiceDetail/ServiceDetail';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route path='/services/:ServiceID' element={<ServiceDetail></ServiceDetail>}></Route>
         <Route path='/About' element={<About></About>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
+        <Route path='/Register' element={<Register></Register>}></Route>
+
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
      <Footer></Footer>
