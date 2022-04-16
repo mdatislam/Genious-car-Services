@@ -13,7 +13,7 @@ const Bannar = () => {
   };
 
     return (
-        <div className="container py-3">
+        <div className="mt-1">
             <Carousel activeIndex={index} onSelect={handleSelect} >
         <Carousel.Item>
           <img
