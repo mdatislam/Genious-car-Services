@@ -5,8 +5,11 @@ import { useSignInWithEmailAndPassword,useSendPasswordResetEmail} from "react-fi
 import auth from "../../firebase.init";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
+import PageTitle from "../Shared/PageTitle/PageTitle";
+import axios from "axios";
 
 const Login = () => {
+  
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
@@ -17,11 +20,15 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const {data}= await axios.post('http://localhost:5000/login',{email})
+   // console.log(data)
+   localStorage.setItem('accessToken',data)
+   navigate(from,{replace:true});
   };
   const navigateToRegister = () => {
     navigate("/Register");
@@ -41,11 +48,13 @@ const Login = () => {
       }
       // else{ Toast("please provide Email")}
   if (user) {
-    navigate(from,{replace:true});
+    //navigate(from,{replace:true});
   }
 
   return (
+    
     <div className="container  w-50 mx-auto border mt-3">
+      <PageTitle title='Login'></PageTitle>
       <h3 className="text-center text-info mt-2">Please Login</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

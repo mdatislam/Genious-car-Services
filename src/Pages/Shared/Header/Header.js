@@ -22,7 +22,7 @@ const Header = () => {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
       <Nav.Link href="Home#Services">Services</Nav.Link>
-      <Nav.Link href="Home#Exparts">Exparts</Nav.Link>
+      <Nav.Link href="Home#Expart">Expart</Nav.Link>
       <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -33,6 +33,13 @@ const Header = () => {
     </Nav>
     <Nav>
       <Nav.Link as={Link} to="About">About</Nav.Link>
+      {
+        user && <>
+        <Nav.Link as={Link} to="AddService">Add Service</Nav.Link>
+        <Nav.Link as={Link} to="ManageService">Manage Service</Nav.Link>
+        <Nav.Link as={Link} to="OrderList">Order-List</Nav.Link>
+        </>
+      }
       
       { user ?
       <button onClick={handleSingOut} className="btn btn-info" >Sing-Out</button>
